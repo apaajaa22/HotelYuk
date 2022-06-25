@@ -1,6 +1,7 @@
 import { TouchableWithoutFeedback } from 'react-native';
 import React from 'react';
 import { Box, Image, Text } from 'native-base';
+import { StarActive } from '../../assets';
 
 interface dataHotelProps {
   image: string;
@@ -35,7 +36,18 @@ const HotelItems = ({
             borderTopRightRadius={'20px'}
             justifyContent={'center'}
             alignItems={'center'}>
-            <Text color={'white'}>{rating}/5</Text>
+            <Box flexDirection={'row'} justifyContent={'center'} ml={2}>
+              <Text color={'white'} pr={1}>
+                {rating}/5
+              </Text>
+              <Image
+                source={StarActive}
+                w={5}
+                h={5}
+                alt="star"
+                resizeMode="cover"
+              />
+            </Box>
           </Box>
           <Image
             zIndex={0}
